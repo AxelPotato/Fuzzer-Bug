@@ -3,7 +3,7 @@ import select
 import argparse
 
 
-class fuzzy():
+class fuzzerBug():
 
     def __init__(self):
 
@@ -161,4 +161,4 @@ class fuzzy():
 
 
 if __name__ == '__main__':
-    fuzzy = fuzzy()
+    fuzzerBug = fuzzerBug()
