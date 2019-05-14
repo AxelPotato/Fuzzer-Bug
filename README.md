@@ -6,36 +6,53 @@ to the specified host and port.
 The payload should come in hex stream format (same as wireshark exports).
 
 ### Usage
-usage: Fuzzer-Bug.py [-h] -d DESTINATION [-p PORT] [-t TIMEOUT] [-f FILENAME]
-                     [-a ATTACK_TECHNIQUE] [-v] [-b PAD_BYTE]
-                     [-m MAX_PADDING_LENGTH] [-q PAD_START] [-u]
+usage: Fuzzer-Bug.py 
+
+                     [-h] -d DESTINATION [-p PORT] [-t TIMEOUT] [-f FILENAME]
+                     [-a ATTACK_TECHNIQUE] [-v] [-b PAD_BYTE]              
+                     [-m MAX_PADDING_LENGTH] [-q PAD_START] [-u]     
                      [-r BIT_RANGE]
 
-Parse
+Arguments:
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -d DESTINATION, --destination DESTINATION
-                        destination host address
-  -p PORT, --port PORT  destination port
-  -t TIMEOUT, --timeout TIMEOUT
-                        Timeout in seconds
-  -f FILENAME, --filename FILENAME
-                        Input file
-  -a ATTACK_TECHNIQUE, --attack_technique ATTACK_TECHNIQUE
-                        Attack techniques types: 0 = original payloads only, 1
-                        = byte switch, 2 = length fuzzer
-  -v, --verbose         set verbosity
-  -b PAD_BYTE, --pad_byte PAD_BYTE
-                        fuzz using this pad byte
-  -m MAX_PADDING_LENGTH, --max_padding_length MAX_PADDING_LENGTH
-                        max size for length fuzz
-  -q PAD_START, --pad_start PAD_START
-                        Start fuzzing after this byte
-  -u, --set_udp         send UDP traffic default is TCP
-  -r BIT_RANGE, --bit_range BIT_RANGE
-                        Set the Min and Max bit range to fuzz default is 0-255
-
+  -h,                     --help                
+                            show this help message and exit
+  
+  -d DESTINATION,         --destination DESTINATION
+                            destination host address
+                        
+  -p PORT,                --port PORT  
+                            destination port
+  
+  -t TIMEOUT,             --timeout TIMEOUT 
+                            Time between requests in seconds
+                        
+  -f FILENAME,            --filename FILENAME 
+                            Input file
+                        
+  -a ATTACK_TECHNIQUE,    --attack_technique ATTACK_TECHNIQUE
+                            Attack techniques types:
+                            0 = original payloads only,
+                            1 = byte switch,
+                            2 = length fuzzer
+                        
+  -v, --verbose             set verbosity
+  
+  -b PAD_BYTE,            --pad_byte PAD_BYTE
+                            fuzz using this pad byte
+                        
+  -m MAX_PADDING_LENGTH,  --max_padding_length MAX_PADDING_LENGTH
+                            max size for length fuzz
+                        
+  -q PAD_START,           --pad_start PAD_START
+                            Start fuzzing after this byte
+                        
+  -u,                     --set_udp         
+                            send UDP traffic default is TCP
+  
+  -r BIT_RANGE,           --bit_range BIT_RANGE
+                            Set the Min and Max bit range to fuzz default is 0-255
+                        
 
 ### Attack techniques
 Supported attack techniques (specified using the -a argument):
