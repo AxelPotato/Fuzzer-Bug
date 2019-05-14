@@ -8,9 +8,9 @@ The payload should come in hex stream format like the one wireshark outputs (see
 ### Usage
 usage: Fuzzer-Bug.py 
 
-                     [-h] -d DESTINATION [-p PORT] [-t TIMEOUT] [-f FILENAME]
-                     [-a ATTACK_TECHNIQUE] [-v] [-b PAD_BYTE]              
-                     [-m MAX_PADDING_LENGTH] [-q PAD_START] [-u]     
+                     [-h] -d DESTINATION -p PORT -f FILENAME [-t TIMEOUT]
+                     [-a ATTACK_TECHNIQUE] [-v] [-b PAD_BYTE]
+                     [-m MAX_PADDING_LENGTH] [-q PAD_START] [-u]
                      [-r BIT_RANGE]
 
 Arguments:
