@@ -10,7 +10,9 @@ usage: Fuzzer-Bug.py [-h] -d DESTINATION [-p PORT] [-t TIMEOUT] [-f FILENAME]
                      [-a ATTACK_TECHNIQUE] [-v] [-b PAD_BYTE]
                      [-m MAX_PADDING_LENGTH] [-q PAD_START] [-u]
                      [-r BIT_RANGE]
-                     
+
+Parse
+
 optional arguments:
   -h, --help            show this help message and exit
   -d DESTINATION, --destination DESTINATION
