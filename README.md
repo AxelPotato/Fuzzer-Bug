@@ -55,11 +55,9 @@ Arguments:
 ### Attack techniques
 Supported attack techniques (specified using the -a argument):
 
-0 - orignal payload only -- just sends the original payload from the file.
-
-1 - byte switcher -- Goes over the payload byte by byte and replaces each byte with the default values of 0-255.
-
-2 - length fuzzer -- Adds an increasing number of a bytes to the end of the payload.
+    0 - orignal payload only  -  just sends the original payload from the file.
+    1 - byte switcher         -  Goes over the payload byte by byte and replaces each byte with the default values of 0-255.
+    2 - length fuzzer         -  Adds an increasing number of a bytes to the end of the payload.
 
 
 ### Examples
