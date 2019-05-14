@@ -65,8 +65,8 @@ Supported attack techniques (specified using the -a argument):
 
 
 ### Examples
-python Fuzzer-Bug.py -d 127.0.0.1 -p 8080 -t 0.5 -f example.txt -a 1 -v -q 15-77
+    python Fuzzer-Bug.py -d 127.0.0.1 -p 8080 -t 0.5 -f example.txt -a 1 -v -q 15-77
 Sends TCP requests to 127.0.0.1 port 8080 every 0.5 seconds using the byte switcher technique fuzzing only the values between 15 and 77 with a verbose output.
 
-python Fuzzer-Bug.py -d 127.0.0.1 -p 8080 -t 0.01 -f example.txt -a 2 -v -b 255 -m 10000 -u
-Sends UDP requests to 127.0.0.1 port 8080 every 0.01 seconds using the length fuzzer technique padding it with 65 byte at the end.
+    python Fuzzer-Bug.py -d 127.0.0.1 -p 8080 -t 0.01 -f example.txt -a 2 -v -b 255 -m 10000 -u
+Sends UDP requests to 127.0.0.1 port 8080 every 0.01 seconds using the length fuzzer technique padding it with a 65 byte at the end.
