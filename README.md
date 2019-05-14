@@ -15,43 +15,43 @@ usage: Fuzzer-Bug.py
 
 Arguments:
 
-  -h,                     --help                
-                            show this help message and exit
+    -h,                     --help                
+                              show this help message and exit
   
-  -d DESTINATION,         --destination DESTINATION
-                            destination host address
+    -d DESTINATION,         --destination DESTINATION
+                              destination host address
                         
-  -p PORT,                --port PORT  
-                            destination port
+    -p PORT,                --port PORT  
+                              destination port
+                        
+    -f FILENAME,            --filename FILENAME 
+                              Input file
+                            
+    -t TIMEOUT,             --timeout TIMEOUT 
+                              Time between requests in seconds
+                        
+    -a ATTACK_TECHNIQUE,    --attack_technique ATTACK_TECHNIQUE
+                              Attack techniques types:
+                              0 = original payloads only,
+                              1 = byte switch,
+                              2 = length fuzzer
+                        
+    -v, --verbose             set verbosity
   
-  -t TIMEOUT,             --timeout TIMEOUT 
-                            Time between requests in seconds
+    -b PAD_BYTE,            --pad_byte PAD_BYTE
+                              fuzz using this pad byte
                         
-  -f FILENAME,            --filename FILENAME 
-                            Input file
+    -m MAX_PADDING_LENGTH,  --max_padding_length MAX_PADDING_LENGTH
+                              max size for length fuzz
                         
-  -a ATTACK_TECHNIQUE,    --attack_technique ATTACK_TECHNIQUE
-                            Attack techniques types:
-                            0 = original payloads only,
-                            1 = byte switch,
-                            2 = length fuzzer
+    -q PAD_START,           --pad_start PAD_START
+                              Start fuzzing after this byte
                         
-  -v, --verbose             set verbosity
+    -u,                     --set_udp         
+                              send UDP traffic default is TCP
   
-  -b PAD_BYTE,            --pad_byte PAD_BYTE
-                            fuzz using this pad byte
-                        
-  -m MAX_PADDING_LENGTH,  --max_padding_length MAX_PADDING_LENGTH
-                            max size for length fuzz
-                        
-  -q PAD_START,           --pad_start PAD_START
-                            Start fuzzing after this byte
-                        
-  -u,                     --set_udp         
-                            send UDP traffic default is TCP
-  
-  -r BIT_RANGE,           --bit_range BIT_RANGE
-                            Set the Min and Max bit range to fuzz default is 0-255
+    -r BIT_RANGE,           --bit_range BIT_RANGE
+                              Set the Min and Max bit range to fuzz default is 0-255
                         
 
 ### Attack techniques
