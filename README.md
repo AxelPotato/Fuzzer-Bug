@@ -1,9 +1,7 @@
 ### Description
 This script is a fork of benaridans fuzzy script with some changed flags and added flexability.
 This is a network service fuzzer that also supports binary protocols.
-The fuzzer expects to get a sample of a typical payload in binary format, then it sends fuzzing requests 
-to the specified host and port.
-The payload should come in hex stream format like the one wireshark outputs (see example).
+The fuzzer expects to get a sample of a typical payload in hex stream format like the one wireshark outputs (see example), then it sends fuzzing requests to the specified host and port.
 
 ### Usage
 usage: Fuzzer-Bug.py 
