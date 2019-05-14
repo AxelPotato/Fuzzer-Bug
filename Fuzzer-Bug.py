@@ -133,11 +133,11 @@ class fuzzy():
         parser.add_argument("-d", "--destination",
                             help="destination host address", required=True)
         parser.add_argument("-p", "--port",
-                            help="destination port")
+                            help="destination port", required=True)
+        parser.add_argument("-f", "--filename",
+                            help="Input file", required=True)
         parser.add_argument("-t", "--timeout",
                             help="Timeout in seconds", default=1)
-        parser.add_argument("-f", "--filename",
-                            help="Input file", default=1)
         parser.add_argument("-a", "--attack_technique",
                             help="Attack techniques types: 0 = original payloads only, 1 = byte switch, 2 = length fuzzer", default=0)
         parser.add_argument("-v", "--verbose",
