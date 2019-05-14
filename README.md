@@ -1,19 +1,21 @@
 ### Description
-A network service fuzzer that supports also binary protocols.
+A network service fuzzer that also supports binary protocols.
 The fuzzer expects to get a sample of a typical payload in binary format, then it sends fuzzing requests 
 to the specified host and port.
+The payload should come in hex stream format (same as wireshark exports).
 
 ### Usage
-usage: fuzzer.py [-h] -t TARGET [-p PORT] [-u TIMEOUT] [-f FILENAME]
-                 [-a ATTACK_TECHNIQUE] [-v] [-b PAD_BYTE]
-                 [-m MAX_PADDING_LENGTH]
-
+usage: Fuzzer-Bug.py [-h] -d DESTINATION [-p PORT] [-t TIMEOUT] [-f FILENAME]
+                     [-a ATTACK_TECHNIQUE] [-v] [-b PAD_BYTE]
+                     [-m MAX_PADDING_LENGTH] [-q PAD_START] [-u]
+                     [-r BIT_RANGE]
+                     
 optional arguments:
   -h, --help            show this help message and exit
-  -t TARGET, --target TARGET
-                        Target host address
-  -p PORT, --port PORT  Target port
-  -u TIMEOUT, --timeout TIMEOUT
+  -d DESTINATION, --destination DESTINATION
+                        destination host address
+  -p PORT, --port PORT  destination port
+  -t TIMEOUT, --timeout TIMEOUT
                         Timeout in seconds
   -f FILENAME, --filename FILENAME
                         Input file
@@ -25,6 +27,11 @@ optional arguments:
                         fuzz using this pad byte
   -m MAX_PADDING_LENGTH, --max_padding_length MAX_PADDING_LENGTH
                         max size for length fuzz
+  -q PAD_START, --pad_start PAD_START
+                        Start fuzzing after this byte
+  -u, --set_udp         send UDP traffic default is TCP
+  -r BIT_RANGE, --bit_range BIT_RANGE
+                        Set the Min and Max bit range to fuzz default is 0-255
 
 
 ### Attack techniques
@@ -32,12 +39,14 @@ Supported attack techniques (specified using the -a argument):
 
 0 - orignal payload only -- just sends the original payload from the file.
 
-1 - byte switcher -- Goes over the payload byte by byte and replaces each byte with value o 0-255.
+1 - byte switcher -- Goes over the payload byte by byte and replaces each byte with the default values of 0-255.
 
 2 - length fuzzer -- Adds an increasing number of a bytes to the end of the payload.
 
 
 ### Examples
-python fuzzer.py -t 127.0.0.1 -p 8080 -u 0.5 -f example.txt -a 1 -v
+python Fuzzer-Bug.py -d 127.0.0.1 -p 8080 -t 0.5 -f example.txt -a 1 -v -q 15-77
+Sends TCP requests to 127.0.0.1 port 8080 every 0.5 seconds using the byte switcher technique fuzzing only the values between 15 and 77 with a verbose output.
 
-python fuzzer.py -t 127.0.0.1 -p 8080 -u 0.5 -f example.txt -a 2 -v -b 255 -m 10000
+python Fuzzer-Bug.py -d 127.0.0.1 -p 8080 -t 0.01 -f example.txt -a 2 -v -b 255 -m 10000 -u
+Sends UDP requests to 127.0.0.1 port 8080 every 0.01 seconds using the length fuzzer technique padding it with 65 byte at the end.
