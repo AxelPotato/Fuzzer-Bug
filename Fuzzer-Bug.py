@@ -1,7 +1,6 @@
 import socket
 import select
 import argparse
-#test123
 
 class fuzzerBug():
 
